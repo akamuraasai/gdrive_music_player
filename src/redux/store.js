@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { shazamCoreApi } from './services/shazamCore';
+import { gdriveCoreApi } from './services/gdriveCore';
 import playerReducer from './features/playerSlice';
 
 export const store = configureStore({
   reducer: {
-    [shazamCoreApi.reducerPath]: shazamCoreApi.reducer,
+    [gdriveCoreApi.reducerPath]: gdriveCoreApi.reducer,
     player: playerReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(shazamCoreApi.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(gdriveCoreApi.middleware),
 });
